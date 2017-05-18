@@ -82,6 +82,8 @@ import org.benzorom.browser.suggestions.SuggestionsAdapter;
 import org.benzorom.browser.ui.SearchBarController;
 import org.benzorom.browser.ui.UrlBarController;
 import org.benzorom.browser.utils.PrefsUtils;
+import org.benzorom.browser.utils.AdBlocker;
+import org.benzorom.browser.utils.PrefsUtils;
 import org.benzorom.browser.utils.UiUtils;
 import org.benzorom.browser.webview.WebViewCompat;
 import org.benzorom.browser.webview.WebViewExt;
@@ -229,6 +231,8 @@ public class MainActivity extends WebViewExtActivity implements
         mWebView.init(this, urlBarController, mLoadingProgress, mIncognito);
         mWebView.setDesktopMode(desktopMode);
         mWebView.loadUrl(url == null ? PrefsUtils.getHomePage(this) : url);
+
+        AdBlocker.init(this);
 
         mHasThemeColorSupport = WebViewCompat.isThemeColorSupported(mWebView);
 
