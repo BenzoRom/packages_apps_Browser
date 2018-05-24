@@ -45,6 +45,7 @@ import org.benzorom.browser.R;
 import org.benzorom.browser.ui.UrlBarController;
 import org.benzorom.browser.utils.AdBlocker;
 import org.benzorom.browser.utils.PrefsUtils;
+import org.benzorom.browser.utils.IntentUtils;
 import org.benzorom.browser.utils.UrlUtils;
 
 import java.net.URISyntaxException;
@@ -205,9 +206,9 @@ class WebClient extends WebViewClient {
             return TextUtils.equals(lastIntent.getPackage(), ourPackageName) ? null : lastIntent;
         }
 
-        Intent changeIntent = new Intent(MainActivity.ACTION_URL_RESOLVED)
+        Intent changeIntent = new Intent(IntentUtils.EVENT_URL_RESOLVED)
                 .addFlags(Intent.FLAG_RECEIVER_REGISTERED_ONLY)
-                .putExtra(MainActivity.EXTRA_URL, url);
+                .putExtra(IntentUtils.EXTRA_URL, url);
         PendingIntent pi = PendingIntent.getBroadcast(context, 0, changeIntent,
                 PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_ONE_SHOT);
 
