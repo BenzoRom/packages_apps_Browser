@@ -37,7 +37,7 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
 
 LOCAL_PACKAGE_NAME := Browser
 
-LOCAL_PROGUARD_FLAG_FILES := ../../proguard-rules.pro
+LOCAL_PROGUARD_FLAG_FILES := proguard-rules
 
 include $(BUILD_PACKAGE)
 
