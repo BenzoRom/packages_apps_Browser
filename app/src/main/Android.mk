@@ -35,6 +35,8 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
     android-support-v7-recyclerview \
     android-support-annotations
 
+LOCAL_PRIVATE_PLATFORM_APIS := true
+
 LOCAL_PACKAGE_NAME := Browser
 
 LOCAL_PROGUARD_FLAG_FILES := ../../proguard-rules.pro
